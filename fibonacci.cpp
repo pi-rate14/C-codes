@@ -2,7 +2,7 @@
 using namespace std;
 int main()
 {
-      int f=0, s=1, i, n, sum=0;
+      int f=0, s=1, i, n, ser=0;
       cout<<"Enter n: ";
       cin>>n;
       cout<<"Fibonacci Series: ";
@@ -10,15 +10,15 @@ int main()
      {
         if(i <= 1)
             {
-                sum=i;
+                ser=i;
             }
         else
             {
-                sum=f + s;
+                ser=f + s;
                 f=s;
-                s=sum;
+                s=ser;
             }
-        cout<<sum<<" ";
+        cout<<ser<<" ";
       }
       cout<<endl;
     return 0;
