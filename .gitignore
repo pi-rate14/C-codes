@@ -1,0 +1,15 @@
+*.o
+*.exe
+*.hs
+*.scala
+*.rb
+*.py
+*.kt
+*.js
+*.rs
+*.pdf
+*.java
+*.cs
+*.DS_Store
+*.txt
+*.layout
