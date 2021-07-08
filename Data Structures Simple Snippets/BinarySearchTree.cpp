@@ -28,6 +28,29 @@ class BST
 public:
     TreeNode *root;
 
+    TreeNode *iterativeSearch(int val)
+    {
+        if (root == NULL)
+            return root;
+        TreeNode *temp = root;
+        while (temp != NULL)
+        {
+            if (val == temp->value)
+            {
+                return temp;
+            }
+            else if (val < temp->value)
+            {
+                temp = temp->left;
+            }
+            else
+            {
+                temp = temp->right;
+            }
+        }
+        return NULL;
+    }
+
     void printPreorder(TreeNode *r)
     {
         if (r == NULL)
@@ -35,6 +58,24 @@ public:
         cout << r->value << " ";
         printPreorder(r->left);
         printPreorder(r->right);
+    }
+
+    void printInorder(TreeNode *r)
+    {
+        if (r == NULL)
+            return;
+        printInorder(r->left);
+        cout << r->value << " ";
+        printInorder(r->right);
+    }
+
+    void printPostorder(TreeNode *r)
+    {
+        if (r == NULL)
+            return;
+        printPostorder(r->left);
+        printPostorder(r->right);
+        cout << r->value << " ";
     }
 
     void print2D(TreeNode *r, int space)
@@ -140,6 +181,9 @@ int main()
             break;
         case 2:
             cout << "search" << endl;
+            cout << "insert value to be inserted: ";
+            cin >> val;
+            new_node = obj.iterativeSearch(val);
             break;
         case 3:
             cout << "delete" << endl;
