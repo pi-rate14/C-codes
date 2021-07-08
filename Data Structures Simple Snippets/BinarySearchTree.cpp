@@ -28,6 +28,15 @@ class BST
 public:
     TreeNode *root;
 
+    void printPreorder(TreeNode *r)
+    {
+        if (r == NULL)
+            return;
+        cout << r->value << " ";
+        printPreorder(r->left);
+        printPreorder(r->right);
+    }
+
     void print2D(TreeNode *r, int space)
     {
         if (r == NULL)
@@ -138,6 +147,7 @@ int main()
         case 4:
             cout << "print and traverse" << endl;
             obj.print2D(obj.root, 5);
+            obj.printPreorder(obj.root);
             break;
         case 5:
             cout << "clr scr" << endl;
