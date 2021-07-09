@@ -28,7 +28,7 @@ int main()
     int begin = 0, end = 0;
     int len = 0;
     int minima = INT_MIN;
-    while (end < input.length())
+    for (int i = 0; i < input.length(); i++)
     {
         if (input[end] == input[begin])
         {
@@ -38,9 +38,10 @@ int main()
         else
         {
             begin = end;
-            minima = max(len, minima);
-            len = 0;
+            len = 1;
+            end++;
         }
+        minima = max(len, minima);
     }
     cout << minima;
 }
