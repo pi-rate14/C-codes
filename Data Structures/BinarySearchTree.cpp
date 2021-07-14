@@ -28,6 +28,16 @@ class BST
 public:
     TreeNode *root;
 
+    int height(TreeNode *r){
+        if(r==NULL)
+        return -1;
+        else{
+            int lheight = height(r->left);
+            int rheight = height(r->right);
+            lheight > rheight ? return (lheight+1) : return (rheight+1);
+        }
+    }
+
     TreeNode *iterativeSearch(int val)
     {
         if (root == NULL)
