@@ -16,6 +16,7 @@ void solve() {
     for (int i = 0;i < n;i++) {
         cin >> temp;
         people.push_back(temp);
+        //add
     }
 }
 
