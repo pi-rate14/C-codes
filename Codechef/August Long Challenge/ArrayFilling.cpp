@@ -1,4 +1,3 @@
-//INCOMPLETE SOLUTION
 
 #include <bits/stdc++.h>
 using namespace ::std;
@@ -12,15 +11,19 @@ void solve() {
     for (int i = 0;i < m;i++) {
         cin >> x1;
         cin >> y1;
-        op.push_back(make_pair(x1, y1));
+        op.push_back({ x1,y1 });
     }
-    sort(op.rbegin(), op.rend());
-    vector<ll> ans(n, 0);
-    for (int i = 1;i <= n;i++) {
-        if (i % op[0].second != 0) {
-            ans[i] = op[0].first;
-        }
+    sort(op.begin(), op.end(), greater<pair<ll, ll>>());
+    ll sum = 0, left = n, mul = 1;
+    for (auto i : op) {
+        ll div = i.second;
+        ll gcd = __gcd(mul, div);
+        div /= gcd;
+        sum += (left - left / div) * i.first;
+        left /= div;
+        mul *= div;
     }
+    cout << sum << "\n";
 }
 
 int main()
